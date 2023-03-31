@@ -6,8 +6,8 @@ import {
   selectFilter,
   selectIsLoading,
   selectFilteredContacts,
-} from 'redux/selectors';
-import { fetchContacts } from 'redux/operations';
+} from 'redux/contacts/selectors';
+import { fetchContacts } from 'redux/contacts/operations';
 import { useEffect } from 'react';
 
 const ContactList = () => {
@@ -33,12 +33,15 @@ const ContactList = () => {
         isLoading === false &&
         error === null ? (
         <p>Contact with name '{filter}' not found</p>
-      ) : (isLoading === false && error === null &&
-        <ul>
-          {filteredContacts.map(contact => {
-            return <ContactListItem key={contact.id} contact={contact} />;
-          })}
-        </ul>
+      ) : (
+        isLoading === false &&
+        error === null && (
+          <ul>
+            {filteredContacts.map(contact => {
+              return <ContactListItem key={contact.id} contact={contact} />;
+            })}
+          </ul>
+        )
       )}
     </>
   );
