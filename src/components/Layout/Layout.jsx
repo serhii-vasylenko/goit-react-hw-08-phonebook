@@ -1,25 +1,12 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Suspense } from 'react';
+import { Outlet } from 'react-router';
 
-const { Suspense } = require('react');
-const { Outlet } = require('react-router');
+import { AppHeader } from 'components/Header/Header';
 
 const Layout = () => {
   return (
     <div>
-      <header>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/contacts">Contacts</Link>
-        </nav>
-        <div>
-          <p>Welcome</p>
-          <button type="button">Logout</button>
-        </div>
-        <div>
-          <NavLink to="/register">Register</NavLink>
-          <NavLink to="/login">Log In</NavLink>
-        </div>
-      </header>
+      <AppHeader/>
       <Suspense fallback={<div>Loading</div>}>
         <Outlet />
       </Suspense>
