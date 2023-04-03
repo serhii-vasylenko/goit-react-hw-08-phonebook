@@ -4,6 +4,8 @@ import { lazy, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuth } from 'redux/auth/selectors';
 import { refreshUser } from 'redux/auth/operations';
+import { PrivateRoute } from 'components/PrivateRoute/PrivateRoute';
+import { PublicRoute } from './PublicRoute/PublicRoute';
 
 const Home = lazy(() => import('pages/Home'));
 const Register = lazy(() => import('pages/Register'));
@@ -23,9 +25,20 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<LogIn />} />
-        <Route path="/contacts" element={<Contacts />} />
+        <Route
+          path="/register"
+          element={<PublicRoute redirectTo="/contacts" component={<Register />} />}
+        ></Route>
+        <Route
+          path="/login"
+          element={<PublicRoute redirectTo="/contacts" component={<LogIn />} />}
+        ></Route>
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute redirectTo="/login" component={<Contacts />} />
+          }
+        />
       </Route>
     </Routes>
   );
