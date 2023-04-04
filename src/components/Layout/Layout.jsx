@@ -8,7 +8,7 @@ const Layout = () => {
     <div className='container  bg-light mt-3'>
       <AppHeader/>
       <Suspense fallback={<div>Loading</div>}>
-        <main className='container pb-3  vh-100'>
+        <main className='container pb-3  vh-100 w-75'>
         <Outlet />
         </main>
       </Suspense>

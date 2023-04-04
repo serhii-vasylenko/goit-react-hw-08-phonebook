@@ -32,15 +32,18 @@ const ContactList = () => {
       ) : filteredContacts.length === 0 &&
         isLoading === false &&
         error === null ? (
-        <p>Contact with name '{filter}' not found</p>
+        <p className='text-danger'>Contact with name '{filter}' not found</p>
       ) : (
         isLoading === false &&
         error === null && (
-          <ul>
+          <>
+          <h4>Contacts count: <span>{contacts.length}</span></h4>
+          <ul className='list-group'>
             {filteredContacts.map(contact => {
               return <ContactListItem key={contact.id} contact={contact} />;
             })}
           </ul>
+          </>
         )
       )}
     </>

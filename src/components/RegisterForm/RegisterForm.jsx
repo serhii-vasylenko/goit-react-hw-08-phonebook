@@ -33,7 +33,7 @@ export const RegisterForm = () => {
         <Form.Control type="password" placeholder="Password" name="password" />
       </Form.Group>
       <Button variant="secondary" type="submit">
-        Log in
+        Register
       </Button>
     </Form>
   );

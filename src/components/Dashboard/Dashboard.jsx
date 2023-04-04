@@ -17,9 +17,9 @@ const Dashboard = () => {
   };
 
   return (
-    <Container className='w-50'>
+    <Container>
       <h1 className='mb-4'>Phonebook</h1>
-      <Button variant='secondary' type="button" onClick={toggleModal}>
+      <Button variant='secondary' type="button" className='w-25' onClick={toggleModal}>
         Add contact
       </Button>
       {showModal && (

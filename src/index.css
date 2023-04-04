@@ -1,6 +1,4 @@
 @import-normalize; /* bring in normalize.css styles */
-
-@import-normalize; /* bring in normalize.css styles */
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 * {
@@ -53,5 +51,5 @@ a {
 }
 
 a:hover {
-  color: #0dcaf0;
+  color: #a8b3a8;
 }

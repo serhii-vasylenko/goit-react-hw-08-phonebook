@@ -13,7 +13,8 @@ export const UserBar = () => {
   return (
     <div className="d-flex align-items-center">
       <p className="me-3">
-        Welcome <span className="text-uppercase fw-bolder">{user.name}</span>
+        Welcome{' '}
+        <span className="text-uppercase fw-bolder text-info">{user.name}</span>
       </p>
       <Button variant="secondary" type="button" onClick={handleClick}>
         Logout
