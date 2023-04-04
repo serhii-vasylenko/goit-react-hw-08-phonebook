@@ -5,10 +5,12 @@ import { AppHeader } from 'components/Header/Header';
 
 const Layout = () => {
   return (
-    <div>
+    <div className='container  bg-light mt-3'>
       <AppHeader/>
       <Suspense fallback={<div>Loading</div>}>
+        <main className='container pb-3  vh-100'>
         <Outlet />
+        </main>
       </Suspense>
     </div>
   );

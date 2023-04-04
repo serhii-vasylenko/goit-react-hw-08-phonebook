@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 
-import { Form, Label, Input, Button } from './ContactForm.styled';
+import { Form, Label, Input } from './ContactForm.styled';
+import { Button } from 'react-bootstrap';
 
 const ContactForm = ({ onSubmit }) => {
   const [name, setName] = useState('');
@@ -52,7 +53,7 @@ const ContactForm = ({ onSubmit }) => {
           onChange={handleChange}
         />
       </Label>
-      <Button type="submit">Add contact</Button>
+      <Button variant='secondary' type="submit">Add contact</Button>
     </Form>
   );
 };

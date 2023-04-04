@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import { selectAuth } from 'redux/auth/selectors';
+import { Link } from 'components/Common.styled';
 
 export const NavBar = () => {
   const {isLoggedIn} = useSelector(selectAuth);
   return (
     <nav>
-      <NavLink to="/">Home</NavLink>
-       {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
+      <Link to="/" className='me-3'>Home</Link>
+       {isLoggedIn && <Link to="/contacts">Contacts</Link>}
     </nav>
   );
 };

@@ -29,7 +29,7 @@ const Modal = ({ onClose, children }) => {
 
   return createPortal(
     <Backdrop onClick={handleBackdropClick}>
-      <Content>{children}</Content>
+      <Content className='w-25'>{children}</Content>
     </Backdrop>,
     modalRoot
   );

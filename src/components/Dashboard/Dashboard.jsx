@@ -5,8 +5,8 @@ import Filter from 'components/Filter/Filter';
 import ContactList from 'components/ContactList/ContactList';
 import Modal from 'components/Modal/Modal';
 
-import { Container, MainTitle, SubTitle } from './Dashboard.styled';
-import { Button } from 'components/ContactListItem/ContactListItem.styled';
+import { Container } from './Dashboard.styled';
+import { Button } from 'react-bootstrap';
 
 const Dashboard = () => {
   const [showModal, setShowModal] = useState(false);
@@ -17,9 +17,9 @@ const Dashboard = () => {
   };
 
   return (
-    <Container>
-      <MainTitle>Phonebook</MainTitle>
-      <Button type="button" onClick={toggleModal}>
+    <Container className='w-50'>
+      <h1 className='mb-4'>Phonebook</h1>
+      <Button variant='secondary' type="button" onClick={toggleModal}>
         Add contact
       </Button>
       {showModal && (
@@ -28,7 +28,7 @@ const Dashboard = () => {
         </Modal>
       )}
 
-      <SubTitle>Contacts</SubTitle>
+      <h2 className='mb-3'>Contacts</h2>
       <Filter />
       <ContactList />
     </Container>

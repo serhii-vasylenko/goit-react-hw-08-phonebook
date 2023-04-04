@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
-import { Item, Button } from './ContactListItem.styled';
+import { Item } from './ContactListItem.styled';
+import { Button } from 'react-bootstrap';
 
 const ContactListItem = ({ contact: { name, number, id } }) => {
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteContact(id));
 
   return (
-    <Item>
-      {name}: {number} <Button onClick={handleDelete}>Delete</Button>
+    <Item className="d-flex align-items-center">
+      {name}: {number} <Button variant='secondary' onClick={handleDelete}>Delete</Button>
     </Item>
   );
 };

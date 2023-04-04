@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom"
+import { Link } from "components/Common.styled"
 
 export const AuthBar = () => {
     return(<div>
-        <NavLink to="/register">Register</NavLink>
-        <NavLink to="/login">Log In</NavLink>
+        <Link to="/register"  className='me-3'>Register</Link>
+        <Link to="/login">Log In</Link>
       </div>)
 }
