@@ -5,7 +5,7 @@ export const Link = styled(NavLink)`
   /* display: block; */
   /* padding: 24px; */
   &.active {
-    color: #0ebdbd;
+    color: #0dcaf0;
     /* background-color: #6cd591; */
   }
 `;
