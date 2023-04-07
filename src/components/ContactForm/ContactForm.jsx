@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contacts/operations';
+import { toast } from 'react-toastify';
 import { Button, Form } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
 
 const ContactForm = ({ onSubmit }) => {
@@ -25,7 +27,8 @@ const ContactForm = ({ onSubmit }) => {
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
     if (isMatch) {
-      alert(`${name} is already in contacts list!`);
+      // alert(`${name} is already in contacts list!`);
+      toast.warning(`${name} is already in contacts list!`)
       return;
     }
 

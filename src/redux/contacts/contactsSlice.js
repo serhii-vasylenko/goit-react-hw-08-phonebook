@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 import {
   fetchContacts,
   addContact,
@@ -23,6 +24,7 @@ const contactsSlice = createSlice({
     builder.addCase(addContact.fulfilled, (state, action) => {
       resetState(state);
       state.items.push(action.payload);
+      toast.info(`Contact ${action.payload.name} successfully added!`);
     });
     builder.addCase(addContact.rejected, handleRejected);
     builder.addCase(deleteContact.pending, state => {
@@ -34,6 +36,7 @@ const contactsSlice = createSlice({
         contact => contact.id === action.payload.id
       );
       state.items.splice(index, 1);
+      toast.info(`Contact ${action.payload.name} deleted!`);
     });
     builder.addCase(deleteContact.rejected, handleRejected);
   },

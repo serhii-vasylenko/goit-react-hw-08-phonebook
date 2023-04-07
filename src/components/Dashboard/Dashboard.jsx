@@ -30,7 +30,7 @@ const Dashboard = () => {
 
       <h2 className='mb-3'>Contacts</h2>
       <Filter />
-      <ContactList />
+      <ContactList />      
     </Container>
   );
 };

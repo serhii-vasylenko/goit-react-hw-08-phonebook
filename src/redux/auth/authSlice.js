@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 import {
   registerUser,
   loginUser,
@@ -19,16 +20,19 @@ const authSlice = createSlice({
       state.user = actions.payload.user;
       state.token = actions.payload.token;
       state.isLoggedIn = true;
+      toast.info(`Successfully registered`);
     });
     builder.addCase(loginUser.fulfilled, (state, actions) => {
       state.user = actions.payload.user;
       state.token = actions.payload.token;
       state.isLoggedIn = true;
+      toast.info(`Successfully logged in`);
     });
     builder.addCase(logoutUser.fulfilled, state => {
       state.user = { name: null, email: null };
       state.token = '';
       state.isLoggedIn = false;
+      toast.info(`Successfully logged out`);
     });
     builder.addCase(refreshUser.pending, state => {
       state.isRefreshing = true;

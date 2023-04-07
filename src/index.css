@@ -1,5 +1,12 @@
 @import-normalize; /* bring in normalize.css styles */
 @import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'react-toastify/dist/ReactToastify.css';
+
+:root {
+  --toastify-color-dark: #6c757d;
+  --toastify-color-warning: #E4A11B;
+  --toastify-color-info: #54B4D3;
+}
 
 * {
   box-sizing: border-box;

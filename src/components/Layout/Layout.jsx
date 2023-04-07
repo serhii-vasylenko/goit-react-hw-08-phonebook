@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router';
 
 import { AppHeader } from 'components/Header/Header';
+import { ToastContainer } from 'react-toastify';
 
 const Layout = () => {
   return (
@@ -12,6 +13,18 @@ const Layout = () => {
         <Outlet />
         </main>
       </Suspense>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };
